@@ -75,6 +75,7 @@ public final class CalligraphyUtils {
         if (textView == null || typeface == null) return false;
         textView.setPaintFlags(textView.getPaintFlags() | Paint.SUBPIXEL_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG);
         textView.setTypeface(typeface);
+        textView.setIncludeFontPadding(false);
         if (deferred) {
             textView.setText(applyTypefaceSpan(textView.getText(), typeface), TextView.BufferType.SPANNABLE);
             textView.addTextChangedListener(new TextWatcher() {
